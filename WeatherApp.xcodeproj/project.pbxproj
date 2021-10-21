@@ -15,6 +15,14 @@
 		7F417AC2272141240074C17B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F417AC0272141240074C17B /* LaunchScreen.storyboard */; };
 		7F417AD0272153110074C17B /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F417ACE272153110074C17B /* ForecastCollectionViewCell.swift */; };
 		7F417AD1272153110074C17B /* ForecastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F417ACF272153110074C17B /* ForecastCollectionViewCell.xib */; };
+		7F417AD3272163B70074C17B /* CurrentWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F417AD2272163B70074C17B /* CurrentWeatherManager.swift */; };
+		7F417AD5272163BF0074C17B /* CurrentWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F417AD4272163BF0074C17B /* CurrentWeatherModel.swift */; };
+		7F417AD7272163D10074C17B /* CurrentWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F417AD6272163D10074C17B /* CurrentWeatherData.swift */; };
+		7F417AD927216F250074C17B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F417AD827216F250074C17B /* UIView+Extensions.swift */; };
+		7F417ADC272170A90074C17B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F417ADB272170A90074C17B /* Date+Extensions.swift */; };
+		7F417ADE2721845C0074C17B /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F417ADD2721845C0074C17B /* ForecastData.swift */; };
+		7F417AE0272188A10074C17B /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F417ADF272188A10074C17B /* ForecastModel.swift */; };
+		7F417AE227218B4E0074C17B /* ForecastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F417AE127218B4E0074C17B /* ForecastManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +36,14 @@
 		7F417AC3272141240074C17B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F417ACE272153110074C17B /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
 		7F417ACF272153110074C17B /* ForecastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastCollectionViewCell.xib; sourceTree = "<group>"; };
+		7F417AD2272163B70074C17B /* CurrentWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherManager.swift; sourceTree = "<group>"; };
+		7F417AD4272163BF0074C17B /* CurrentWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherModel.swift; sourceTree = "<group>"; };
+		7F417AD6272163D10074C17B /* CurrentWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherData.swift; sourceTree = "<group>"; };
+		7F417AD827216F250074C17B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		7F417ADB272170A90074C17B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		7F417ADD2721845C0074C17B /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
+		7F417ADF272188A10074C17B /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
+		7F417AE127218B4E0074C17B /* ForecastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +76,7 @@
 		7F417AB4272141200074C17B /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				7F417ADA272170940074C17B /* Extensions */,
 				7F417ACB272152C40074C17B /* Controller */,
 				7F417ACA272152BC0074C17B /* View */,
 				7F417AC9272152B20074C17B /* Model */,
@@ -76,6 +93,12 @@
 		7F417AC9272152B20074C17B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7F417AD2272163B70074C17B /* CurrentWeatherManager.swift */,
+				7F417AD4272163BF0074C17B /* CurrentWeatherModel.swift */,
+				7F417AD6272163D10074C17B /* CurrentWeatherData.swift */,
+				7F417ADD2721845C0074C17B /* ForecastData.swift */,
+				7F417ADF272188A10074C17B /* ForecastModel.swift */,
+				7F417AE127218B4E0074C17B /* ForecastManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -95,6 +118,15 @@
 				7F417AB9272141200074C17B /* WeatherViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		7F417ADA272170940074C17B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7F417AD827216F250074C17B /* UIView+Extensions.swift */,
+				7F417ADB272170A90074C17B /* Date+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,8 +203,16 @@
 			files = (
 				7F417ABA272141200074C17B /* WeatherViewController.swift in Sources */,
 				7F417AB6272141200074C17B /* AppDelegate.swift in Sources */,
+				7F417ADC272170A90074C17B /* Date+Extensions.swift in Sources */,
+				7F417AD5272163BF0074C17B /* CurrentWeatherModel.swift in Sources */,
 				7F417AD0272153110074C17B /* ForecastCollectionViewCell.swift in Sources */,
 				7F417AB8272141200074C17B /* SceneDelegate.swift in Sources */,
+				7F417AE227218B4E0074C17B /* ForecastManager.swift in Sources */,
+				7F417AD7272163D10074C17B /* CurrentWeatherData.swift in Sources */,
+				7F417AD927216F250074C17B /* UIView+Extensions.swift in Sources */,
+				7F417AE0272188A10074C17B /* ForecastModel.swift in Sources */,
+				7F417ADE2721845C0074C17B /* ForecastData.swift in Sources */,
+				7F417AD3272163B70074C17B /* CurrentWeatherManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
