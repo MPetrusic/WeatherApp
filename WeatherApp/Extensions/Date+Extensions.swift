@@ -8,7 +8,7 @@
 import Foundation
 
 extension Date {
-    func dayOfWeek() -> String? {
+    func dateToString() -> String? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, d. MMM"
         return dateFormatter.string(from: self).capitalized

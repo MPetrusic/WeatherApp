@@ -23,6 +23,8 @@
 		7F417ADE2721845C0074C17B /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F417ADD2721845C0074C17B /* ForecastData.swift */; };
 		7F417AE0272188A10074C17B /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F417ADF272188A10074C17B /* ForecastModel.swift */; };
 		7F417AE227218B4E0074C17B /* ForecastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F417AE127218B4E0074C17B /* ForecastManager.swift */; };
+		7F417AE62724142D0074C17B /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F417AE52724142D0074C17B /* CALayer+Extensions.swift */; };
+		7FD0B836272594E9007E7F7B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD0B835272594E9007E7F7B /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		7F417ADD2721845C0074C17B /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
 		7F417ADF272188A10074C17B /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
 		7F417AE127218B4E0074C17B /* ForecastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastManager.swift; sourceTree = "<group>"; };
+		7F417AE52724142D0074C17B /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
+		7FD0B835272594E9007E7F7B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,16 +80,14 @@
 		7F417AB4272141200074C17B /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				7F417AB5272141200074C17B /* AppDelegate.swift */,
+				7F417AB7272141200074C17B /* SceneDelegate.swift */,
 				7F417ADA272170940074C17B /* Extensions */,
 				7F417ACB272152C40074C17B /* Controller */,
 				7F417ACA272152BC0074C17B /* View */,
 				7F417AC9272152B20074C17B /* Model */,
-				7F417AB5272141200074C17B /* AppDelegate.swift */,
-				7F417AB7272141200074C17B /* SceneDelegate.swift */,
-				7F417ABB272141200074C17B /* Main.storyboard */,
-				7F417ABE272141230074C17B /* Assets.xcassets */,
-				7F417AC0272141240074C17B /* LaunchScreen.storyboard */,
-				7F417AC3272141240074C17B /* Info.plist */,
+				7F417AE927248D9E0074C17B /* SupportingFiles */,
+				7F417AEA27248F2C0074C17B /* Resources */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -93,12 +95,8 @@
 		7F417AC9272152B20074C17B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7F417AD2272163B70074C17B /* CurrentWeatherManager.swift */,
-				7F417AD4272163BF0074C17B /* CurrentWeatherModel.swift */,
-				7F417AD6272163D10074C17B /* CurrentWeatherData.swift */,
-				7F417ADD2721845C0074C17B /* ForecastData.swift */,
-				7F417ADF272188A10074C17B /* ForecastModel.swift */,
-				7F417AE127218B4E0074C17B /* ForecastManager.swift */,
+				7F417AE32722B0740074C17B /* CurrentWeather */,
+				7F417AE42722B0A80074C17B /* Forecast */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				7F417AB9272141200074C17B /* WeatherViewController.swift */,
+				7F417ABB272141200074C17B /* Main.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -125,8 +124,47 @@
 			children = (
 				7F417AD827216F250074C17B /* UIView+Extensions.swift */,
 				7F417ADB272170A90074C17B /* Date+Extensions.swift */,
+				7F417AE52724142D0074C17B /* CALayer+Extensions.swift */,
+				7FD0B835272594E9007E7F7B /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7F417AE32722B0740074C17B /* CurrentWeather */ = {
+			isa = PBXGroup;
+			children = (
+				7F417AD2272163B70074C17B /* CurrentWeatherManager.swift */,
+				7F417AD4272163BF0074C17B /* CurrentWeatherModel.swift */,
+				7F417AD6272163D10074C17B /* CurrentWeatherData.swift */,
+			);
+			path = CurrentWeather;
+			sourceTree = "<group>";
+		};
+		7F417AE42722B0A80074C17B /* Forecast */ = {
+			isa = PBXGroup;
+			children = (
+				7F417ADD2721845C0074C17B /* ForecastData.swift */,
+				7F417ADF272188A10074C17B /* ForecastModel.swift */,
+				7F417AE127218B4E0074C17B /* ForecastManager.swift */,
+			);
+			path = Forecast;
+			sourceTree = "<group>";
+		};
+		7F417AE927248D9E0074C17B /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7F417AC0272141240074C17B /* LaunchScreen.storyboard */,
+				7F417AC3272141240074C17B /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		7F417AEA27248F2C0074C17B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7F417ABE272141230074C17B /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +249,8 @@
 				7F417AD7272163D10074C17B /* CurrentWeatherData.swift in Sources */,
 				7F417AD927216F250074C17B /* UIView+Extensions.swift in Sources */,
 				7F417AE0272188A10074C17B /* ForecastModel.swift in Sources */,
+				7FD0B836272594E9007E7F7B /* String+Extensions.swift in Sources */,
+				7F417AE62724142D0074C17B /* CALayer+Extensions.swift in Sources */,
 				7F417ADE2721845C0074C17B /* ForecastData.swift in Sources */,
 				7F417AD3272163B70074C17B /* CurrentWeatherManager.swift in Sources */,
 			);
@@ -363,7 +403,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J4BH3WR6T4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_FILE = WeatherApp/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -392,7 +432,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J4BH3WR6T4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_FILE = WeatherApp/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

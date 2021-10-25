@@ -14,12 +14,19 @@ protocol WeatherManagerDelegate {
 }
 
 struct WeatherManager {
-    private let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=013065561ef5cb6685e98834eacdca52&units=metric"
+    
+    private enum Request {
+        static let baseUrl = "https://api.openweathermap.org/data/2.5/weather?appid=%@&units=metric"
+        static let apiKey = "013065561ef5cb6685e98834eacdca52"
+    }
+    
+    private let weatherURL = String(format: Request.baseUrl,Request.apiKey)
     
     var delegate: WeatherManagerDelegate?
     
     func fetchWeather(cityName: String) {
-        let urlString = "\(weatherURL)&q=\(cityName)"
+        let cityNameFormatted = cityName.preparedForRequest()
+        let urlString = "\(weatherURL)&q=\(cityNameFormatted)"
         performRequest(with: urlString)
     }
     
@@ -28,7 +35,7 @@ struct WeatherManager {
         performRequest(with: urlString)
     }
     
-    func performRequest(with urlString: String) {
+    private func performRequest(with urlString: String) {
         
         if let url = URL(string: urlString){
             let session = URLSession(configuration: .default)
@@ -54,8 +61,11 @@ struct WeatherManager {
             let id = decodedData.weather[0].id
             let name = decodedData.name
             let temp = decodedData.main.temp
+            let pressure = decodedData.main.pressure
+            let humidity = decodedData.main.humidity
+            let description = decodedData.weather[0].main
             
-            let weather = CurrentWeatherModel(conditionId: id, cityName: name, temperature: temp)
+            let weather = CurrentWeatherModel(conditionId: id, cityName: name, temperature: temp, pressure: pressure, humidity: humidity, description: description)
             return weather
         } catch {
             delegate?.didFailWithError(error: error)

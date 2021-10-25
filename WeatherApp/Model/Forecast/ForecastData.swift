@@ -12,9 +12,9 @@ struct ForecastData: Codable {
 }
 
 struct ForecastList: Codable {
-    let main: [ForecastMain]
+    let dt_txt: String?
+    let main: ForecastMain
     let weather: [ForecastWeather]
-    let dt_txt: String
 }
 
 struct ForecastMain: Codable {

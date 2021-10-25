@@ -1,5 +1,5 @@
 //
-//  CurrentWeatherModel.swift
+//  ForecastModel.swift
 //  WeatherApp
 //
 //  Created by Milos Petrusic on 21.10.21..
@@ -7,15 +7,30 @@
 
 import Foundation
 
-struct CurrentWeatherModel {
+struct ForecastModel {
     let conditionId: Int
-    let cityName: String
     let temperature: Double
+    let date: String
     
     var temperatureString: String {
-        return String(format: "%.1f", temperature)
+        return String(format: "%.f", temperature)
     }
     
+    var dateFormatted: String {
+        // Convert string received to Date and back to String to reformat it
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "EE, d. MMM"
+        
+        if let date = dateFormatterGet.date(from: date) {
+            return dateFormatterPrint.string(from: date)
+        } else {
+            return date
+        }
+    }
+
     var conditionName: String {
         switch conditionId {
         case 200...232:
@@ -36,5 +51,4 @@ struct CurrentWeatherModel {
             return "cloud"
         }
     }
-    
 }
