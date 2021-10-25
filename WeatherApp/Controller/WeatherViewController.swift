@@ -62,8 +62,8 @@ class WeatherViewController: UIViewController {
         cityNameLabel.layer.fadeAnimation(duration: 0.7)
     }
     
-    private func showFailedAlert() {
-        let ac = UIAlertController(title: "Error", message: "Unable to fetch weather data for this location at this moment.", preferredStyle: .alert)
+    private func showAlert(title: String, message: String) {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(ac, animated: true)
     }
@@ -90,8 +90,8 @@ extension WeatherViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let city = searchTextField.text {
             if city != "" {
-            weatherManager.fetchWeather(cityName: city)
-            forecastManager.fetchForecast(cityName: city)
+                weatherManager.fetchWeather(cityName: city)
+                forecastManager.fetchForecast(cityName: city)
             }
         }
         searchTextField.text = ""
@@ -131,7 +131,7 @@ extension WeatherViewController: WeatherManagerDelegate {
     }
     func didFailWithError(error: Error) {
         DispatchQueue.main.async {
-            self.showFailedAlert()
+            self.showAlert(title: "Error", message: "Unable to fetch data for this city at the moment")
         }
     }
 }
@@ -163,6 +163,14 @@ extension WeatherViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        if manager.authorizationStatus == .denied {
+            showAlert(title: "Location needed", message: "In order to use this app you need to allow location permission.")
+        } else {
+            locationManager.requestLocation()
+        }
     }
 }
 
